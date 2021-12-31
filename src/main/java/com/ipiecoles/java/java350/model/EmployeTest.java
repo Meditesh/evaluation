@@ -60,13 +60,13 @@ public class EmployeTest {
         Assertions.assertThat(nbAnnees).isEqualTo(0);
     }
     @Test
-    void testAugmenterSalaire() {
+    void test_Augmenter_Salaire() {
         double untaireٍsalaire = 0;
-        double persntageaugmentaion = 5.0;
+        double pourcentage = 5.0;
         //Given
-        Employe employe = new Employe("Nicolas", "John", "T123432", LocalDate.of(2018, Month.JANUARY, 8), 1000d, 1,1.4);
+        Employe employe = new Employe("Ngadi", "Elmahdi", "T123456", LocalDate.of(2018, Month.JANUARY, 8), 1200d, 1,1.4);
         employe.setSalaire(1200d);
-        untaireٍsalaire = employe.getSalaire()  * (1 + (persntageaugmentaion/100));
+        untaireٍsalaire = employe.getSalaire()  * (1 + (pourcentage/100));
 
         //When
         employe.augmenterSalaire(5.0);
@@ -76,12 +76,12 @@ public class EmployeTest {
 
     }
     @Test
-    void augmenterSalaireZero() {
+    void augmenter_Salaire_Null() {
         double untaireٍsalaire = 0;
-        double persntageaugmentaion = 5.0;
+        double pourcentage = 5.0;
         //Given
-        Employe employe = new Employe("Nicolas", "John", "T123432", LocalDate.of(2018, Month.JANUARY, 8), 0d, 1,1.4);
-        untaireٍsalaire = employe.getSalaire()  * (1 + (persntageaugmentaion/100));
+        Employe employe = new Employe("Ngadi", "Elmahdi", "T123456", LocalDate.of(2018, Month.JANUARY, 8), 0d, 1,1.4);
+        untaireٍsalaire = employe.getSalaire()  * (1 + (pourcentage/100));
 
         //When
         employe.augmenterSalaire(5.0);
@@ -89,9 +89,9 @@ public class EmployeTest {
         Assertions.assertThat(employe.getSalaire()).isZero();
     }
     @Test
-    void augmenterSalairePourcentageNegatif(){
+    void augmenter_Salaire_Pourcentage_Minus(){
         //given
-        Employe employe = new Employe("Nicolas", "John", "T123432", LocalDate.of(2018, Month.JANUARY, 8), 1900d, 1,1.4);
+        Employe employe = new Employe("ngadi", "Elmahdi", "T123456", LocalDate.of(2018, Month.JANUARY, 8), 1800d, 1,1.4);
         Double salaireSmic = 1500.0;
         //when
         employe.augmenterSalaire(-3d);
