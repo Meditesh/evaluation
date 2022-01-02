@@ -111,7 +111,7 @@ case SATURDAY:var = var + 1;
 
     //Augmenter salaire
     public void augmenterSalaire(double pourcentage){
-        if(pourcentage > 0){
+        if(pourcentage > 0 && this.salaire >0){
         salaire = salaire + (salaire * pourcentage/100); }}
 
     public Long getId() {
